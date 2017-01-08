@@ -1,0 +1,44 @@
+﻿<Window x:Class="MvvmDI.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="300" Width="500">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Button Grid.Row="0"
+                Grid.Column="0"
+                Margin="15, 0" 
+                Command="{Binding ShowFirstViewCommand}"
+                Content="Show first view"/>
+
+        <Button Grid.Row="0"
+                Grid.Column="1"
+                Margin="15, 0" 
+                Command="{Binding ShowSecondViewCommand}"
+                Content="Show second view"/>
+
+        <Button Grid.Row="0"
+                Grid.Column="2"
+                Margin="15, 0" 
+                Command="{Binding ShowThirdViewCommand}"
+                Content="Show third view"/>
+
+        <ContentControl 
+            Grid.Row="1"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Content="{Binding CurrentViewModel}" />
+    </Grid>
+</Window>
